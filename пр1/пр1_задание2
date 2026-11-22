@@ -1,0 +1,37 @@
+def get_data():
+    """
+    Функция запрашивает у пользователя строку.
+    Возвращает введенную строку
+    """
+    text = input("Введите строку: ")
+    return text
+
+def process_data(data):
+    """
+    Функция обрабатывает данные.
+    Удаляет все знаки препинания из строки.
+    Принимает строку.
+    Возвращает строку без знаков препинания
+    """
+    punctuation = ".,!?;:()\"'-"
+    result = ""
+    for char in data:
+        if char not in punctuation:
+            result += char
+    return result
+
+def display_results():
+    """
+    Функция выводит результаты обработки
+    """
+    print("=== Удаление знаков препинания из строки ===")
+    text = get_data()
+    
+    print(f"\nВведенная строка: '{text}'")
+    
+    cleaned_text = process_data(text)
+    
+    print(f"Строка без знаков препинания: '{cleaned_text}'")
+
+if __name__ == "__main__":
+    display_results()

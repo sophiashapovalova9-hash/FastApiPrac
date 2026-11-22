@@ -1,0 +1,64 @@
+def create_file_with_words(filename, count):
+    """
+    Функция создает файл со словами.
+    Каждое слово записывается на новой строке.
+    Параметры:
+        filename - имя файла
+        count - количество слов
+    """
+    file = open(filename, 'w', encoding='utf-8')
+    
+    words = ["яблоко", "банан", "апельсин", "груша", "виноград", 
+             "арбуз", "дыня", "персик", "слива", "манго",
+             "киви", "лимон", "гранат", "хурма", "инжир"]
+    
+    for i in range(count):
+        word = words[i % len(words)]
+        file.write(word + "\n")
+    
+    file.close()
+    print(f"Создан файл '{filename}' с {count} словами.")
+
+def read_words_from_file(filename):
+    """
+    Функция читает слова из файла в список.
+    Параметры:
+        filename - имя файла
+    Возвращает список слов
+    """
+    file = open(filename, 'r', encoding='utf-8')
+    words = []
+    
+    for line in file:
+        words.append(line.strip())
+    
+    file.close()
+    return words
+
+def sort_words(words):
+    """
+    Функция сортирует список слов по алфавиту.
+    Принимает список слов.
+    Возвращает отсортированный список
+    """
+    return sorted(words)
+
+def main():
+    """
+    Основная функция программы
+    """
+    print("=== Сортировка слов по алфавиту ===")
+    
+    filename = input("Введите имя файла: ")
+    count = int(input("Введите количество слов: "))
+    
+    create_file_with_words(filename, count)
+    
+    words = read_words_from_file(filename)
+    print(f"\nСлова из файла: {words}")
+    
+    sorted_words = sort_words(words)
+    print(f"Слова по алфавиту: {sorted_words}")
+
+if __name__ == "__main__":
+    main()

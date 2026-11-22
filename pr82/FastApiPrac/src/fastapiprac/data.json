@@ -1,0 +1,31 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "1984 (обновлено)",
+      "author": "George Orwell",
+      "year": 1949,
+      "genre": "Dystopian",
+      "price": 10.99,
+      "in_stock": false
+    },
+    {
+      "id": 2,
+      "title": "Преступление и наказание",
+      "author": "Фёдор Достоевский",
+      "year": 1866,
+      "genre": "Роман",
+      "price": 12.5,
+      "in_stock": true
+    },
+    {
+      "id": 3,
+      "title": "Мастер и Маргарита",
+      "author": "Михаил Булгаков",
+      "year": 1967,
+      "genre": "Роман",
+      "price": 11.0,
+      "in_stock": false
+    }
+  ]
+}

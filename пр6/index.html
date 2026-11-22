@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запись в тату-салон</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>TATTOO STUDIO</h1>
+    <p class="subtitle">Оставьте заявку на сеанс, и мы свяжемся с вами</p>
+
+    [SUCCESS]
+
+    <form method="POST" action="/book">
+        <label>Ваше имя</label>
+        <input type="text" name="name" placeholder="Иван" required>
+        <label>Телефон</label>
+        <input type="tel" name="phone" placeholder="+7 (999) 123-45-67" required>
+        <label>Услуга</label>
+        <select name="service" required>
+            <option value="">— выберите услугу —</option>
+            <option>Консультация и эскиз</option>
+            <option>Татуировка (сеанс 1 час)</option>
+            <option>Татуировка (сеанс 3 часа)</option>
+            <option>Перекрытие (Cover-up)</option>
+            <option>Коррекция / обновление</option>
+            <option>Пирсинг</option>
+        </select>
+        <div class="row">
+            <div>
+                <label>Дата</label>
+                <input type="date" name="date" required>
+            </div>
+            <div>
+                <label>Время</label>
+                <input type="time" name="time" required>
+            </div>
+        </div>
+        <button type="submit">Записаться</button>
+    </form>
+
+    <h2>Текущие записи ([COUNT])</h2>
+    [TABLE]
+</div>
+</body>
+</html>

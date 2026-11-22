@@ -1,0 +1,47 @@
+import random
+
+def create_list():
+    """
+    Функция создает список из случайных чисел.
+    Пользователь вводит количество элементов.
+    Возвращает созданный список
+    """
+    n = int(input("Введите количество элементов: "))
+    list = []
+    for i in range(n):
+        num = random.randint(1, 100)
+        list.append(num)
+    return list
+
+def process_list(list):
+    """
+    Функция обрабатывает список.
+    Находит количество элементов, больших среднего арифметического.
+    Принимает список чисел.
+    Возвращает среднее арифметическое и количество элементов, больших среднего
+    """
+    if not list:
+        return 0, 0
+    
+    avg = sum(list) / len(list)
+    count = 0
+    for num in list:
+        if num > avg:
+            count += 1
+    return avg, count
+
+def display_results():
+    """
+    Функция выводит результаты обработки
+    """
+    print("=== Поиск количества элементов, больших среднего арифметического ===")
+    my_list = create_list()
+    print(f"\nСгенерированный список: {my_list}")
+    
+    avg, count = process_list(my_list)
+    
+    print(f"Среднее арифметическое: {avg:.2f}")
+    print(f"Количество элементов, больших среднего арифметического: {count}")
+
+if __name__ == "__main__":
+    display_results()
